@@ -1,0 +1,517 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* <HEADER> */
+header {
+    margin: auto;
+    background-color: #ddffedee;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+header .container {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* logo */
+header .container a img {
+    width: 100px;
+}
+
+header .container .links {
+    position: relative;
+}
+/* ---------------------------------------------------- */
+/* START icon */
+header .container .links .myicon {
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+header .container .links .myicon span {
+    width: 100%;
+    height: 3px;
+    margin-bottom: 5px;
+    background-color: black;
+}
+
+header .container .links .myicon span:nth-child(2) {
+    width: 60%;
+    transition-duration: 0.3s;
+    transition-property: width;
+}
+
+header .container .links:hover span:nth-child(2) {
+    width: 100%;
+}
+
+/* list arrow */
+header .container .myicon::before {
+    content: "";
+    border: 20px solid transparent;
+    border-bottom-color: black;
+    position: absolute;
+    bottom: -17px;
+    right: -5px;
+    display: none;
+}
+
+header .container .links:hover .myicon::before {
+    display: block;
+}
+/* END icon */
+
+/* START links */
+header .container .links ol {
+    opacity: 0;
+    width: 100vw;
+    padding: 15px;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    right: -15px;
+    top: calc(100% + 17px);
+    background-color: black;
+    z-index: 2000;
+    display: none;
+    height: calc(100vh - 60px);
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+/* list width adjustment */
+/* Extra Small */
+@media (min-width: 576px) {
+    header .container .links ol {
+        width: 250px;
+        height: fit-content;
+    }
+}
+
+/* Small */
+@media (min-width: 768px) {
+    header .container .links ol {
+        width: 250px;
+        height: fit-content;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    header .container .links ol {
+        width: 300px;
+        height: fit-content;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    header .container .links ol {
+        width: 300px;
+        height: fit-content;
+    }
+}
+/* . */
+
+/* list height adjustment */
+@media (max-height: 640px) {
+    header .container .links ol {
+        height: calc(100vh - 64px);
+    }
+}
+/* . */
+
+header .container .links ol ul {
+    padding: inherit;
+    margin: inherit;
+    list-style: inherit;
+    font-size: medium;
+}
+
+header .container .links ol ul h4 {
+    color: rgba(240, 240, 240, 0.3);
+    font-weight: normal;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+header .container .links ol ul li {
+    padding: 3px 0;
+}
+
+header .container .links ol ul li:hover a {
+    margin-left: 20px;
+}
+
+header .container .links ol ul li a {
+    text-decoration: none;
+    font-size: x-large;
+    color: #f0f0f0;
+    transition-duration: 0.3s;
+    transition-property: margin, color;
+}
+/* links adjustmens */
+/* All screens */
+@media (min-width: 576px) {
+    header .container .links ol ul li {
+        padding: 10px 0;
+        border-bottom: 1px solid black;
+    }
+}
+/* . */
+
+header .container .links ol ul li a:hover {
+    color: var(--sub-main-color, turquoise);
+}
+
+header .container .links:hover ol {
+    opacity: 0.9;
+    display: flex;
+    gap: 15px;
+    flex-flow: column nowrap;
+}
+
+header .container nav a {
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+header .container nav.anchor a {
+    margin-right: 15px;
+    color: black;
+    position: relative;
+}
+
+header .container nav.anchor a:not(:first-of-type)::before {
+    content: "|";
+    position: absolute;
+    left: -13px;
+    top: -1px;
+    color: #095;
+}
+
+header .container nav.anchor a:hover {
+    color: #095;
+}
+
+header .container nav a:not(nav.anchor a) {
+    margin-left: 10px;
+}
+header .container nav.account a {
+    padding: 15px;
+    margin-left: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: aquamarine;
+}
+
+header .container nav.account a {
+    color: black;
+}
+
+header .container nav.account a:hover {
+    color: #095;
+}
+
+@media (max-width: 991px) {
+    header .container nav {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    header .container .links {
+        display: none;
+    }
+}
+
+/* END links */
+/* --------------------------------------- */
+/* </HEADER> */
+
+.flex {
+    background: rgb(34, 195, 134);
+    background: linear-gradient(
+        360deg,
+        rgba(34, 195, 134, 1) 0%,
+        rgba(27, 173, 145, 1) 100%
+    );
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+/* pattern in background */
+.background {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.Climate {
+    background-color: hsla(0, 0%, 100%, 0.25);
+    border-radius: 33px;
+    color: white;
+    display: inline-block;
+    font-size: 1.2vw;
+    line-height: 1;
+    margin-bottom: 20px;
+    padding: 9px 15px;
+}
+/* sec of all text */
+.text {
+    width: 40vw;
+    padding: 90px 0px 0 70px;
+    margin-right: 4px;
+    position: relative;
+}
+.text h1 {
+    color: #fff;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    font-size: 3.5vw;
+    width: 12em;
+    height: fit-content;
+}
+.text p {
+    font-weight: bold;
+    width: 36vw;
+    height: fit-content;
+    color: #fff;
+    font-size: 1.2vw;
+    line-height: 1.44;
+    margin-bottom: 2vw;
+}
+/* button of show me how it work */
+.button_F {
+    background-color: #fff;
+    border-radius: 50px;
+    border: 0px solid;
+    color: rgba(1, 67, 81, 1);
+    border-color: rgba(1, 67, 81, 0);
+    padding: 1.2vw 3vw 1.2vw 3vw;
+    font-size: 1vw;
+}
+/* button of Got Questions? Let’s Talk */
+.button_S {
+    background-color: rgba(1, 67, 81, 1);
+    border-radius: 50px;
+    border: 0px solid;
+    color: rgba(255, 255, 255, 1);
+    border-color: rgba(1, 67, 81, 0);
+    padding: 1.2vw 3vw 1.2vw 3vw;
+    font-size: 1vw;
+}
+/* make cursor like hand in button */
+a {
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+/* sec of all image */
+.image {
+    position: relative;
+    width: 520px;
+    display: grid;
+    grid-template-columns: repeat(5, 19vw);
+    margin: 60px 20px 20px 20px;
+    grid-template-rows: repeat(3, 15vw);
+}
+
+.phone {
+    width: 24vw;
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+.map {
+    width: 24vw;
+    position: absolute;
+    grid-row: 3;
+    grid-column: 1/1;
+    transform: translate(1vw, 0.5vw);
+}
+.photos {
+    width: 45vw;
+    position: absolute;
+    grid-column: 2/2;
+    grid-row: 1/2;
+}
+.web {
+    width: 48vw;
+    position: absolute;
+    grid-area: 2 / 2 / 2 / 2;
+    transform: translate(2.5vw, 1.5vw);
+}
+.button_F:hover {
+    color: rgb(34, 195, 134);
+    -webkit-box-shadow: 1px 1px 32px -14px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 1px 32px -14px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 1px 32px -14px rgba(0, 0, 0, 0.75);
+}
+
+.button_S:hover {
+    background-color: rgb(0, 121, 148);
+}
+/* large screen 1 */
+@media (max-width: 970px) {
+    .image {
+        width: 410px;
+    }
+    .button_F,
+    .button_S {
+        padding: 1.2vw 2vw 1.2vw 2vw;
+    }
+}
+/* large screen  2 */
+@media (min-width: 600px) and (max-width: 790px) {
+    .text {
+        text-align: justify;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        margin-top: 30px;
+    }
+    .Climate {
+        font-size: 5vw;
+    }
+    .text h1 {
+        font-size: 7vw;
+        text-align: center;
+    }
+    .text p {
+        font-size: 3.5vw;
+        text-align: center;
+        width: 90vw;
+    }
+    .button_F,
+    .button_S {
+        font-size: 3.5vw;
+    }
+    .button {
+        margin-top: 10px;
+    }
+    .image {
+        transform: scale(1.6);
+        position: relative;
+        top: 10vw;
+        left: 16vw;
+    }
+    .flex {
+        display: block;
+        width: 100%;
+    }
+}
+/* mid sereen */
+@media (min-width: 400px) and (max-width: 600px) {
+    .text {
+        text-align: justify;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        margin-top: 30px;
+    }
+    .Climate {
+        font-size: 5vw;
+    }
+    .text h1 {
+        font-size: 7vw;
+        text-align: center;
+    }
+    .text p {
+        font-size: 3.5vw;
+        text-align: center;
+        width: 90vw;
+    }
+    .button_F,
+    .button_S {
+        font-size: 3.5vw;
+    }
+    .button {
+        margin-top: 10px;
+    }
+    .image {
+        transform: scale(1.6);
+        position: relative;
+        top: 6vw;
+        left: 27vw;
+    }
+    .flex {
+        display: block;
+        width: 100%;
+    }
+}
+/* small screen */
+@media (min-width: 1px) and (max-width: 400px) {
+    .text {
+        text-align: justify;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        margin-top: 30px;
+    }
+    .Climate {
+        font-size: 5vw;
+    }
+    .text h1 {
+        font-size: 7vw;
+        text-align: center;
+    }
+    .text p {
+        font-size: 3.5vw;
+        text-align: center;
+        width: 90vw;
+    }
+    .button_F,
+    .button_S {
+        font-size: 3.5vw;
+    }
+    .button {
+        margin-top: 10px;
+    }
+    .image {
+        transform: scale(1.6);
+        position: relative;
+        top: 4vw;
+        left: 35vw;
+    }
+    .flex {
+        display: block;
+        width: 100%;
+    }
+}
+
+
+footer {
+    text-align: center;
+    background-color: #ddffed;
+    /* margin-top: 50px; */
+    padding: 20px;
+    color: black;
+}
